@@ -62,12 +62,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           href="#"
           className="flex items-center gap-2.5 group whitespace-nowrap shrink-0 text-slate-900 font-bold tracking-tight text-base sm:text-lg"
         >
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-200/90 shadow-2xs shrink-0 bg-slate-100 ring-2 ring-teal-50">
+          <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-200/90 shadow-2xs shrink-0 bg-teal-800 text-white font-bold text-xs flex items-center justify-center ring-2 ring-teal-50">
             <img
               src={PERSONAL_INFO.photoUrl}
               alt={PERSONAL_INFO.name}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
               className="w-full h-full object-cover object-[center_30%]"
             />
+            <span className="hidden group-has-[:not(img:visible)]:inline select-none">AK</span>
           </div>
           <span>Ayudha Kusuma</span>
           <span className="text-slate-400 font-normal text-xs ml-0.5 font-mono hidden md:inline">

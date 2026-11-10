@@ -12,10 +12,13 @@ export const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full overflow-hidden border border-slate-800 shrink-0 bg-slate-900">
+            <div className="w-9 h-9 rounded-full overflow-hidden border border-slate-800 shrink-0 bg-teal-900 text-teal-200 font-bold text-xs flex items-center justify-center">
               <img
                 src={PERSONAL_INFO.photoUrl}
                 alt={PERSONAL_INFO.name}
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
                 className="w-full h-full object-cover object-[center_30%]"
               />
             </div>

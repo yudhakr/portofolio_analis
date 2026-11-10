@@ -8,6 +8,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
+  const [imgError, setImgError] = React.useState(false);
+
   return (
     <section id="hero" className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -20,12 +22,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               {/* Symmetrical Square Minimalist Photo Frame */}
               <div className="relative shrink-0 group">
                 <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 aspect-square rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-100 ring-4 ring-slate-50">
-                  <img
-                    src={PERSONAL_INFO.photoUrl}
-                    alt={PERSONAL_INFO.name}
-                    className="w-full h-full object-cover object-[center_32%] transition-transform duration-300 group-hover:scale-105"
-                    loading="eager"
-                  />
+                  {!imgError ? (
+                    <img
+                      src={PERSONAL_INFO.photoUrl}
+                      alt={PERSONAL_INFO.name}
+                      onError={() => setImgError(true)}
+                      className="w-full h-full object-cover object-[center_32%] transition-transform duration-300 group-hover:scale-105"
+                      loading="eager"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-teal-700 to-slate-900 flex flex-col items-center justify-center text-white">
+                      <span className="text-xl sm:text-2xl font-bold font-mono">AK</span>
+                      <span className="text-[10px] text-teal-200 mt-1">Data Analyst</span>
+                    </div>
+                  )}
                 </div>
                 {/* Minimalist Verified Status Dot */}
                 <span

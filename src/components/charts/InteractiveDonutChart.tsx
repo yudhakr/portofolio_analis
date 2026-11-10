@@ -25,7 +25,7 @@ export const InteractiveDonutChart: React.FC<InteractiveDonutChartProps> = ({
 
   if (!data || data.length === 0) return null;
 
-  const total = data.reduce((sum, item) => sum + item.value, 0);
+  const total = data.reduce((sum, item) => sum + item.value, 0) || 1;
   const defaultColors = ['#0d9488', '#0284c7', '#4f46e5', '#f59e0b', '#e11d48', '#64748b'];
 
   const center = size / 2;
@@ -48,7 +48,7 @@ export const InteractiveDonutChart: React.FC<InteractiveDonutChartProps> = ({
     };
   });
 
-  const activeSlice = hoveredIndex !== null ? slices[hoveredIndex] : slices[0];
+  const activeSlice = (hoveredIndex !== null ? slices[hoveredIndex] : slices[0]) || { label: '', value: 0 };
 
   return (
     <div className="bg-white rounded-xl border border-slate-200/80 p-4 transition-all">

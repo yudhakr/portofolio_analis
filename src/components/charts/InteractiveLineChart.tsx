@@ -36,9 +36,10 @@ export const InteractiveLineChart: React.FC<InteractiveLineChartProps> = ({
   const paddingY = 24;
   const width = 600;
 
-  // Calculate coordinates
+  // Calculate coordinates safely
+  const divisor = data.length > 1 ? data.length - 1 : 1;
   const points = data.map((d, i) => {
-    const x = paddingX + (i / (data.length - 1)) * (width - paddingX * 2);
+    const x = paddingX + (i / divisor) * (width - paddingX * 2);
     const y = height - paddingY - ((d.value - minVal) / range) * (height - paddingY * 2);
     return { x, y, ...d };
   });

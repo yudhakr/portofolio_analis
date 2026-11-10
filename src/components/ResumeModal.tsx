@@ -99,10 +99,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
 
               {/* Symmetrical Minimalist Photo in CV */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square rounded-xl overflow-hidden border border-slate-300 shadow-2xs shrink-0 bg-slate-100 self-start sm:self-auto">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 aspect-square rounded-xl overflow-hidden border border-slate-300 shadow-2xs shrink-0 bg-teal-800 text-white font-bold text-sm flex items-center justify-center self-start sm:self-auto">
                 <img
                   src={PERSONAL_INFO.photoUrl}
                   alt={PERSONAL_INFO.name}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                   className="w-full h-full object-cover object-[center_32%]"
                 />
               </div>

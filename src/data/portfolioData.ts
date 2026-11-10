@@ -78,7 +78,7 @@ export const PERSONAL_INFO = {
   location: "Samarinda, Kalimantan Timur (Open to Remote / Hybrid)",
   linkedin: "https://linkedin.com/in/ayudha-kusuma",
   github: "https://github.com/yudhadeux",
-  photoUrl: "/assets/aistudio/dreamina-2025-10-29-8627-Ubah_gambar_menjadi_potret_sinematik_den..._3d6f8177.jpeg",
+  photoUrl: "/assets/ayudha-kusuma.jpeg",
   stats: [
     { value: "4+", label: "Completed Projects", detail: "Analisis data UMKM & ritel praktis" },
     { value: "3+", label: "Core Data Tools", detail: "Excel, SQL, Python, Power BI" },

@@ -89,6 +89,9 @@ export const About: React.FC = () => {
                 <img
                   src={PERSONAL_INFO.photoUrl}
                   alt={PERSONAL_INFO.name}
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                   className="w-full h-full object-cover object-[center_32%] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end p-4">
